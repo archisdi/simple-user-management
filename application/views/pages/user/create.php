@@ -2,6 +2,13 @@
 
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
+			<?php if (isset($_SESSION['errors'])){ ?>
+				<div class="alert alert-danger alert-dismissible">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+					<h4><i class="icon fa fa-ban"></i> Validation Error!</h4>
+					<?php echo $_SESSION['errors'] ?>
+				</div>
+			<?php } ?>
 			<div class="box box-primary">
 				<div class="box-header with-border">
 					<h3 class="box-title">Create New User</h3>
@@ -33,6 +40,7 @@
 					</div>
 				</form>
 			</div>
+
 		</div>
 	</div>
 

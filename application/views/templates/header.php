@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"> <!-- Font Awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css"> <!-- Ionicons -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"> <!-- Theme style -->
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css"> <!-- Datatable -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.11/css/AdminLTE.css"> <!-- AdminLTE Skins. -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.11/css/skins/_all-skins.css"> <!-- Google Font -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -16,13 +17,12 @@
 
 <body class="hold-transition skin-blue layout-top-nav">
 <div class="wrapper">
-
 	<header class="main-header">
 		<nav class="navbar navbar-static-top">
 			<div class="container">
 
 				<div class="navbar-header">
-					<a href="#" class="navbar-brand"><b>User</b> Management</a>
+					<a href="/" class="navbar-brand"><b>User</b> Management</a>
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
 						<i class="fa fa-bars"></i>
 					</button>

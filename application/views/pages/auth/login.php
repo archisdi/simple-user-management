@@ -7,12 +7,12 @@
 					<h3 class="box-title">Login</h3>
 				</div>
 
-				<form role="form" method="post" action="/auth/login">
+				<form role="form" method="post" action="/sign_user">
 					<div class="box-body">
 
 						<div class="form-group">
 							<label for="exampleInputEmail1">Email address</label>
-							<input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+							<input type="email" class="form-control" id="email" placeholder="Email" name="email">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputPassword1">Password</label>

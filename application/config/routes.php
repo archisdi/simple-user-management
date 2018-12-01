@@ -1,7 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+$route['default_controller'] = 'main';
+
 $route['login']['GET'] = 'auth/login';
+$route['sign_user']['POST'] = 'auth/sign_user';
 $route['logout']['POST'] = 'auth/logout';
 $route['profile']['GET'] = 'auth/profile';
 
