@@ -7,6 +7,14 @@ class User extends CI_Controller {
 		$this->load->model('user_model');
 		$this->load->helper('form');
 		$this->load->library('form_validation');
+		$this->load->library('upload', [
+			'upload_path' => './uploads/',
+			'allowed_types' => 'gif|jpg|png',
+			'encrypt_name' => true,
+			'max_size' => 2048,
+			'max_width' => 1000,
+			'max_height' => 1000
+		]);
 	}
 
 	public function create()
@@ -16,7 +24,20 @@ class User extends CI_Controller {
 
 	public function save(){
 		$this->user_validation();
-		$img_url = 'https://via.placeholder.com/50';
+
+		if(!empty($_FILES['image']['name'])) {
+			if (!$this->upload->do_upload('image')) {
+				$error = $this->upload->display_errors();
+				$this->session->set_flashdata('errors', $error);
+				redirect('/users/create');
+			} else {
+				$res = $this->upload->data();
+				$img_url = 'uploads/' . $res['file_name'];
+			}
+		} else {
+			$img_url = 'https://via.placeholder.com/150';
+		}
+
 		$this->user_model->create([
 			'name' => trim($this->input->post('name')),
 			'email' => trim($this->input->post('email')),
