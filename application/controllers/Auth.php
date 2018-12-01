@@ -13,8 +13,14 @@ class Auth extends CI_Controller {
 	}
 
 	public function sign_user(){
-		$inputs = $this->get_inputs(['email', 'password']);
-		print_r($inputs);
+		$user = $this->user_model->find_by_email($this->input->post('email'));
+
+		if (!$user || !password_verify($this->input->post('password'), $user->password)){
+			$this->session->set_flashdata('errors', 'Email or password invalid');
+			redirect('/login', 'location');
+		}
+
+		print_r($user); // user logged in, initiate sessions, unforetunately my time is up...
 	}
 
 	public function logout()
@@ -24,6 +30,7 @@ class Auth extends CI_Controller {
 
 	public function profile()
 	{
+		// must be protected by authentication middleware before data retrieval.
 		$this->render_view('profile');
 	}
 
@@ -34,13 +41,4 @@ class Auth extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 
-	private function get_inputs($arr){
-		$inputs = [];
-		foreach ($arr as $input){
-			array_push($inputs, [
-				$input => $this->input->post($input)
-			]);
-		}
-		return $inputs;
-	}
 }

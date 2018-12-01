@@ -16,6 +16,12 @@ class User_model extends CI_Model {
 		return $query->result();
 	}
 
+	public function find_by_email($email)
+	{
+		$query = $this->db->get_where('users', ['email' => $email]);
+		return $query->row();
+	}
+
 	public function create($payload){
 		return $this->db->insert('users', $payload);
 	}

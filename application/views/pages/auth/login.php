@@ -2,6 +2,13 @@
 
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
+			<?php if (isset($_SESSION['errors'])){ ?>
+				<div class="alert alert-danger alert-dismissible">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+					<h4><i class="icon fa fa-ban"></i> Whoops !</h4>
+					<?php echo $_SESSION['errors'] ?>
+				</div>
+			<?php } ?>
 			<div class="box box-default">
 				<div class="box-header with-border">
 					<h3 class="box-title">Login</h3>
